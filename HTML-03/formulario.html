@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe formulario</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <!--el metodo post oculta cuando se envian los datos, casi siempre es post (ej datos de tarjeta, contraseña),
+         action es quien va a procesar el formulario, enctype es encodear (codifica), application es el predeterminado envio de formularios encodeados,
+        el enc multytipe: me encodea y puede enviar archivos, y el txtplain no lo utilizamos casi nunca(con proposito de debug)
+    LOS FORMULARIOS SIEMPRE VAN ENCODEADO, PORQUE VIAJAN POR NODOS HASTA EL SV Y PUEDEN SER SNIFEADOS -->
+    <form action="" method="post" enctype="application/x-www-form-urlencoded">
+
+        <!--siempre hay un label q es la etiqueta del input. El for de label y el id del input tienen que ser iguales para relacionarse-->
+        <label for="nombre">Nombre: </label>
+        <!--el type define el tipo del elemento(text, password), el id siempre es igual al for del label, y el name-->
+        <input type="text" name="nombre" id="nombre" required placeholder="Ingrese su nombre">
+
+        <label for="pw">Contraseña: </label>
+        <input type="password" name="contraseña" id="pw" required placeholder="Ingrese su contraseña"> 
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+    <br>
+
+    <form action="https://formspree.io/f/mdovdnaj" method="post" enctype="multipart/form-data">
+        <!--siempre hay un label q es la etiqueta del input. El for de label y el id del input tienen que ser iguales para relacionarse-->
+        <label for="nombre">Nombre: </label>
+        <!--el type define el tipo del elemento(text, password), el id siempre es igual al for del label, y el name-->
+        <input type="text" name="nombre" id="nombre">
+
+        <label for="pw">Contraseña: </label>
+        <input type="password" name="contraseña" id="pw">
+
+        <label for="date">Fecha: </label>
+        <input type="date" name="date" id="date">
+
+        <!--<label for="file">Archivo: </label>
+        <input type="file" name="Imagen" id="file">!-->
+
+
+        <label for="foto">Imagen: </label>
+        <input type="file" name="Imagen" id="foto">
+
+        <!--<label for="comentario">Comentario: </label>
+        <textarea type="file" name="Imagen" id="foto">!-->
+
+        <!--<input type="submit" value="Enviar">!-->    <!--esto me envia todo lo que esta en el formulario anterio-->
+
+        <button type="sumbit">Enviar2</button>
+
+    
+
+    </form>
+    <br>
+    <h2>nuevo form otras cosas</h2>
+    <form action="">
+        <h3>radio buttons</h3>
+
+        <input type="radio" name="cliente" id="cliente-si" value="si">
+        <label for="cliente-si">Si</label>
+
+        <input type="radio" name="cliente" id="cliente-si" value="si">
+        <label for="cliente-no">No</label>
+
+        <button type="sumbit">Enviar2</button>
+
+        <h3>check box buttons</h3>
+
+
+        <label for="lenguajes">Lenguajes</label>
+        <br>
+        <input type="checkbox" name="html" id="html" value="html">
+        <label for="html">HTML</label>
+        <br>
+        <input type="checkbox" name="css" id="css" value="css">
+        <label for="css">css</label>
+
+        <h3>select buttons</h3>
+
+        <select name="provincias" id="provincias">
+            <!--<option value=""></option>!-->
+            <option value="caba">Ciudad Autonoma de Buenos Aires</option>
+            <option value="gba">Gran Buenos Aires</option>
+            <option value="cordoba">Cordoba</option>
+            <option value="rio negro">Rio Negro</option>
+        </select>
+
+    </form>
+</body>
+</html>
